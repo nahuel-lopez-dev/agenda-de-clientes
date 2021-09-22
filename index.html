@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de clientes</title>
+    <meta name="keywords"
+        content="HTML5, CSS3, Bootstrap, Git, GitHub, JavaScript, jQuery, Agenda, software, aplicaciones, peticiones HTTP, animaciones">
+    <meta name="description"
+        content="Este es un proyecto de una agenda con JavaScript, implementación de Apis con peticiones con jQuery, animaciones y ventana de modal oculta">
+    <!--Enlaces a google font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap" rel="stylesheet">
+    <!--Enlace a CSS de Bootstrap local-->
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
+    <!--Enlace a css-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="fondoIndex">
+    <!-- acá empieza la cabecera -->
+    <header id="inicio" class="bg-dark text-secondary text-center p-5">
+        <h1 class="display-3">Proyecto con JavaScript y jQuery</h1>
+    </header>
+    <!-- Acá termina la cabecera -->
+
+    <!--Acá empieza el contenido principal-->
+    <main>
+        <section>
+            <div class="parrafoServicio m-4">
+                <button id="btnAbrirInfo" class="btn btn-lg btn-danger m-3">Información</button>
+                <p class="infOculta bg-dark subtitulo p-3 m-3">A continuación se muestra una agenda con JavaScript, y otras aplicaciones con jQuery</p>
+            </div>
+            <h2 id="tituloDemoAgenda" class="tituloServicio bg-dark p-2 mt-5">Agenda de clientes</h2>
+            <div class="serviciosFlex">
+                <div class="cajitaServicio bg-dark m-4">
+                    <p class="parrafoValores p-3">Una agenda de clientes y usuarios, potenciales clientes, indispensable
+                        para cualquier organización que quiera mantener un control adecuado y organizado de su negocio.
+                        Personalizamos esta agenda acorde a sus necesidades, y la combinamos con las mejores
+                        tecnologías, para que pueda delegar en nosotros esos trabajos que puede hacerlo un software de
+                        gestión.
+                    </p>
+                    <a href="#modalServicio" button type="button" id="softwareUno"
+                        class="servicios btn btn-secondary btn-lg m-1">Quiero este software</a>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <button type="button" id="abrirAgenda" class="btn btn-danger btn-lg m-3">Demo
+                    "Agenda de clientes"</button>
+            </div>
+            <!-- Agenda Oculta por defecto-->
+            <div id="agregarCliente" class="agendaOculta">
+                <form id="formularioCliente" class="container cajaFormulario bg-dark">
+                    <div class="form-group col-md-12">
+                        <label for="nombreCliente"></label>
+                        <input id="nombreCliente" name="nombreCliente" type="text" class="form-control"
+                            placeholder=" Nombre del cliente" required>
+                    </div>
+
+                    <div class="form-group col-md-12 mb-3">
+                        <label for="telCliente"></label>
+                        <input id="telCliente" type="tel" class="form-control" placeholder="Tel o Cel del cliente">
+                    </div>
+
+                    <div class="form-group col-md-12 mb-3">
+                        <label for="emailCliente"></label>
+                        <input id="emailCliente" type="email" class="form-control" placeholder="Email del cliente"
+                            required>
+                    </div>
+
+                    <div class="col-md-12 text-white">
+                        <label for="exampleFormControlTextarea1" class="form-label m-2">Motivos del cliente:</label>
+                        <textarea id="motivosCliente" class="form-control" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group col-md-4 mb-3">
+                        <label for="id"></label>
+                        <input id="id" name="idCliente" type="text" class="form-control" placeholder="ID del cliente"
+                            required>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <label></label>
+                        <input id="guardarCliente" type="submit" class="btn btn-lg btn-secondary m-3"
+                            value="Guardar cliente">
+                        <input type="reset" class="btn btn-lg btn-danger text-white m-3" value="Resetear campos">
+                    </div>
+                </form>
+                <div class="form-group text-center">
+                    <label></label>
+                    <input id="borrarTodo" type="submit" class="btn btn-lg btn-danger m-3" value="Borrar clientes">
+                </div>
+                <div id="lista"></div>
+            </div>
+
+            <h2 class="tituloServicio bg-dark p-2 mt-4">Implementación de APIs</h2>
+            <div class="serviciosFlex">
+                <div class="cajitaServicio bg-dark m-4">
+                    <p class="parrafoValores p-3">API de generador de UUID, o identificador
+                        único universal.
+                    </p>
+                    <a href="#modalServicio" button type="button" id="softwareDos"
+                        class="servicios btn btn-secondary btn-lg m-1">Quiero una API</a>
+                </div>
+            </div>
+            <div id="api" class="container-fluid">
+
+            </div>
+            <div id="respuestaApi" class="row justify-content-center m-2">
+
+            </div>
+
+            <div class="bg-dark m-4"></div>
+                <a href="#modalServicio" button type="button" id="softwareTres"
+                    class=""></a>
+            </div>
+            
+
+            <!-- Modal de servicios oculto -->
+            <div id="modalServicio" class="oculto modalOculto">
+                <form id="modalFormulario" class="container-fluid cajaFormulario bg-dark">
+                    <button class="closeModal btn-lg m-1">&times;</button>
+                    <p class="valores m-1 p-2">Complete estos datos y pronto un asesor se comunicará con usted</p>
+                    <div class="form-group">
+                        <label for="nombre"></label>
+                        <input id="nombre" type="text" class="form-control" placeholder=" Nombre o empresa">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tel"></label>
+                        <input id="tel" type="tel" class="form-control" placeholder="Tel o Cel de contacto">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"></label>
+                        <input id="email" type="email" class="form-control" placeholder="Email">
+                    </div>
+
+                    <div class="form-group text-center">
+                        <label></label>
+                        <input id="modalCliente" type="submit" class="btn btn-lg btn-secondary m-3" value="Enviar">
+                        <input type="reset" class="btn btn-lg btn-danger text-white m-3" value="Borrar">
+                    </div>
+                </form>
+            </div>
+            <!-- Fin de modal de servicios oculto-->
+
+            <div class=" serviciosFlex">
+                <div class="cajitaServicio bg-dark m-4">
+                    <a href="#modalServicio" button type="button" id="softwareCuatro"
+                        class="servicios btn btn-secondary btn-lg m-1">Quiero un Software personalizado</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--Acá termina el contenido principal-->
+
+    <div id="irArriba"></div>
+
+    <!--Acá empieza el pie de página-->
+    <footer id="footer" class="bg-dark">
+        <div class="container-fluid">
+            <div class="column pie">
+                <a href="#" class="logoFooter">Agenda</a>
+                <a href="https://github.com/Nahuel-DevOne/" target="_blank" class="m-2"><img src="./img/github.svg"
+                        alt="Imagen del icono de GitHub" class="icono"></a>
+                <a href="https://www.linkedin.com/in/nahuel-developer/" target="_blank" class="m-2"><img
+                        src="./img/linkedin.svg" alt="Imagen del icono de linkedIn" class="icono"></a>
+            </div>
+            <div class="info mb-5">Nahuel-DevOne &copy; 2021</div>
+        </div>
+    </footer>
+    <!--Acá termina el pie de página-->
+
+    <!--Enlace a JavaScript de Bootstrap local-->
+    <script src="./assets/bootstrap/js/bootstrap.js"></script>
+    <!-- Enlace a JavaScript de Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!--Enlace a JavaScript local-->
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>

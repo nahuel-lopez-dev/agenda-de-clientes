@@ -1,0 +1,727 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Variables globales*/
+$colorUno: black;
+$colorDos: white;
+$colorTres: rgb(184, 181, 181);
+$colorCuatro: #ffbe50;
+$letraFuente: "Nunito", sans-serif;
+// /*Variables cambiadas en bootstrap*/
+// $primary: rgb(184, 181, 181);
+// $danger: #c0130a;
+// $theme-colors: (
+//   "primary": $primary,
+//   "danger": $danger
+// );
+
+@import "../bootstrap/scss/bootstrap.scss";
+
+/*Acá empiezo a usar BEM*/
+.fondoIndex {   /*Esto es un bloque*/
+    background-image: linear-gradient(to right bottom, rgb(253, 253, 253), rgb(220, 218, 250));
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
+
+.logoNav {      /*Este es otro bloque*/
+    width: 13vw;
+    height: auto;
+    margin-left: 4vw;
+}
+
+.sloganNav {      /*Este es otro bloque*/
+    width: 25vw;
+    height: auto;
+    margin-left: 0.2vw;
+}
+
+/*Secciones del home con BEM*/
+.cajaHome {         /*Este es un bloque*/
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.cajaHome__ImgHome {    /*Este es un elemento del bloque cajaHome*/
+    height: auto;
+    width: 100vw;
+}
+
+.cajaHome::before { /*Este es un pseudoelemento de cajaHome para producir el efecto "overlay"*/
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.tituloPrincipal {        /*Este es un bloque*/
+    color: $colorCuatro;
+    font-size: 4rem;   /* 64px*/
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1.5px 1.5px 0.5px grey;
+    font-family: $letraFuente;
+    position: absolute;
+    margin-top: 4vh;
+    margin-right: 3vw;
+    margin-left: 3vw;
+}
+
+.tituloSecundario {     /*Este es otro bloque*/
+    color: $colorCuatro;
+    font-size: 3rem; /* 48px*/
+    font-weight: bold;
+    font-family: $letraFuente;
+    margin: 3vh 0;
+    justify-content: center;
+}
+
+.cajaDark {     /*Este es otro bloque*/
+    max-width: 100vw;
+    height: 50vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+}
+
+.subtitulo {        /*Este es otro bloque.*/
+    color: $colorDos;
+    font-size: 2rem; /* 32px*/
+    font-weight: bold;
+    font-family: $letraFuente;
+    line-height: 3rem;
+}
+
+.contenedor {       /*Este es otro bloque*/
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    align-content:center;
+    margin: 10px 30px;
+}
+
+.caja {         /*Este es otro bloque*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items:center;
+    align-content: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px #484848;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.caja__ImgServ {    /*Este es un elemento del bloque caja*/
+    height: auto;
+    width: 30vw;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.caja__Titulo {     /*Este es otro elemento del bloque caja*/
+    color: $colorUno;
+    font-size: 2rem; /**/
+    line-height: 2.5rem;
+    font-family: $letraFuente;
+    text-align: center;
+    padding: 10px;
+}
+
+/*footer con BEM*/
+.cajaPie {              /*Este es otro bloque*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 2px solid #ffbe50;
+}
+
+.contenedorPie {        /*Este es otro bloque*/
+    margin: 10px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorPie__items {      /*Este es un elemento del bloque contenedorPie*/
+    margin-top: 10px;
+    font-family: $letraFuente;
+}
+
+.contenedorPie__items--itemsColor {     /*Este es un modificador del elemento del bloque contenedorPie*/
+    color: $colorTres;
+    text-decoration: none;
+}
+
+.contenedorRedes {      /*Este es otro bloque*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.logoRedes {        /*Este es otro bloque*/
+    height: auto;
+    width: 3.5rem;  
+    margin: 10px;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.logoFooter {   /*Este es otro bloque*/
+    width: 13vw;
+    height: auto;
+}
+/*Acá termino de usar BEM*/
+
+.tituloPri {        /*Se va a usar para todos los h1 en cada .html, excepto el del index*/
+    color: $colorUno;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1.5px 1.5px 0.5px grey;
+    font-family: $letraFuente;
+    margin: 4vh 3vw 3vh 3vw;
+}
+
+.contenedorNosotros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 0 1rem 1rem 1rem;    
+}
+
+.videoNosotros {
+    height: auto;
+    width: 70vw;
+    border-radius: 5%;
+    align-items: center;
+    align-self: center;
+}
+
+.tituloValores {     
+    color: $colorCuatro;
+    font-size: 3rem; /* 48px*/
+    font-weight: bold;
+    font-family: $letraFuente;
+    text-align: center;
+}
+
+.valores {
+    color: $colorCuatro;
+    font-size: 2.25rem;
+    font-weight: bold;
+    font-family: $letraFuente;
+    margin: 1rem;
+    text-align: center;
+}
+
+.parrafoValores {
+    color: $colorDos;
+    font-size: 1.25rem;
+    line-height: 1.8rem;
+    font-family: $letraFuente;
+    text-align: center;   
+}
+
+.titulo {
+    color: $colorUno;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 3rem;
+    font-family: $letraFuente;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.parrafo {
+    color: $colorUno;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-family: $letraFuente;
+    text-align: center;    
+}
+
+.iconStyle {
+    height: 4rem;   
+}
+
+.contenedorPilares {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    margin: 2rem;
+}
+
+.cajita {
+    margin: 1.5rem;
+    height: auto;
+    width: 30vw;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px #484848;
+}
+
+.cajitaServicio {
+    height: auto;
+    width: 80vw;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px #484848;
+}
+
+.tituloServicio { 
+    color: $colorCuatro;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 3rem;
+    font-family: $letraFuente;
+    margin: 1.5rem 0;
+    text-align: center;
+
+}
+
+.parrafoServicio {
+    color: $colorUno;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    font-family: $letraFuente;
+    margin: 1.25rem;
+    text-align: center;
+}
+
+.serviciosFlex {
+    display: flex;
+    flex-direction:row;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgServicio {
+    height: auto;
+    width: 50vw;
+    margin: 10px;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.oculto {
+    display: none;
+}
+
+
+.articulo {
+    height: auto;
+    width: 30vw;
+    border-radius: 10px;
+}
+
+.contacto {
+    color: $colorUno;
+    font-size: 1.25rem;
+    font-family: $letraFuente;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    margin: 1rem;
+}
+
+.contactoFlex {
+    display: flex;
+    flex-direction: row;
+    margin: 1.25rem 1.25rem 0 1.25rem;
+}
+
+.mapaContacto {
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px #484848;
+}
+
+.cajaFormulario {
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px #484848;
+    max-width: 45vw;
+}
+
+#footer {
+    max-width: 100vw;
+    height: 25vh;
+    border-top: 2px solid $colorCuatro; 
+   } 
+ 
+   .icono {
+    height: 7vh;
+    width: auto;
+    border: 1px solid $colorUno;
+    border-radius: 50%;
+    padding: 4px; }  
+   
+   #footer .info {
+     text-align: center;
+     order: 2;
+     color: $colorCuatro; }
+ 
+   .logoFooter{
+     order: 1;
+     text-decoration: none;
+     color: $colorCuatro;
+     font-size: 4vw;
+     font-family: Arial, Helvetica, sans-serif;
+     font-style: italic;
+     font-weight: bold;
+     font-size: 4.5vw;
+     margin-right: 2vw;
+     text-shadow: 2px 2px 5px $colorUno;}
+ 
+ .logoFooter:hover{
+   color: $colorDos;
+   text-shadow: 2px 2px 5px $colorTres; 
+ }
+   
+   .pie{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 2vh;
+   }
+
+/* Específicos de la sección demos.html */
+.agendaOculta {
+    display: none;
+}
+
+.presentacion {
+    background-color: #212529;
+    color: $colorDos;
+    font-family: $letraFuente;
+    margin: 1vh 1vw;
+    padding: 1vh 1vw;
+    border-radius: 10px;
+    border: 2px solid $colorCuatro;
+}
+
+.infOculta {
+    display: none;
+}
+
+/*Transición*/
+.trans {
+    transition: all 1s;
+}
+
+.trans:hover {
+    transform: scale(1.1);
+}
+
+/*Animación*/
+/*Línea de tiempo*/
+@keyframes efectoUno {
+    0% {
+        font-family: $letraFuente;     /*Propiedades CSS*/
+    }
+    20% {
+        font-family: $letraFuente;
+        color: $colorTres;
+    }
+    40% {
+        font-family: $letraFuente;
+        color: $colorDos;
+    }
+    60% {
+        font-family: $letraFuente;
+        color: $colorTres;
+    }
+    80% {
+        font-family: $letraFuente;
+        color: $colorDos;
+    }
+    100% {
+        color: $colorUno;
+        font-family: $letraFuente;   /*Propiedades CSS*/
+    } /*Final de la animación*/
+}
+
+.animaUno {
+    animation-name: efectoUno; /*Nombre del keyframe*/
+    animation-iteration-count: 2;
+    animation-timing-function: ease-in;
+    animation-duration: 0.5s;
+    animation-delay: 0.7s;
+}
+
+/*Efecto para girar un objeto. No es muy estético*/
+// @keyframes efectoDos {
+//     0% {
+//         font-family: $letraFuente;   /*Propiedades CSS*/
+//     }
+//     20% {
+//         transform: rotate(45deg);
+//         color: $colorTres;
+//         font-family: $letraFuente;
+//     }
+//     40% {
+//         transform: rotate(90deg);
+//         color: $colorDos;
+//         font-family: $letraFuente;
+//     }
+//     60% {
+//         transform: rotate(180deg);
+//         color: $colorTres;
+//         font-family: $letraFuente;
+//     }
+//     80% {
+//         transform: rotate(270deg);
+//         color: $colorDos;
+//         font-family: $letraFuente;
+//     }
+//     100% {
+//         transform: rotate(360deg);
+//         color: $colorUno;
+//         font-family: $letraFuente;   /*Propiedades CSS*/
+//     } /*Final de la animación*/
+// }
+
+// .animaDos {
+//     animation-name: efectoDos; /*Nombre del keyframe*/
+//     animation-iteration-count: 2;
+//     animation-timing-function: ease-in;
+//     animation-duration: 0.7s;
+//     animation-delay: 1s;
+// }
+
+/*Adaptación a tablet*/
+@media(max-width: 991.98px) {
+    
+    .logoNav {
+        width: 15vw;
+        margin-left: 3vw;
+    }
+    
+    .sloganNav {      
+        width: 32vw;
+        height: auto;
+    }
+
+    .logoFooter {
+        width: 18vw;
+    }
+
+    .tituloPrincipal {
+        font-size: 3.25rem;
+        margin-top: 3vh;
+    }
+
+    .cajaDark {
+        height: 60vh;
+    }
+
+    .tituloSecundario {
+        font-size: 2.5rem;
+    }
+
+    .tituloPri {
+        font-size: 3.25rem;
+        margin-top: 3vh;        
+    }
+    
+    .caja__Titulo {
+        font-size: 1.75rem;
+    }
+    
+    .subtitulo {
+        font-size: 1.75rem;
+    }
+
+    .parrafo {
+        font-size: 1.5rem;
+    }
+
+    .tituloValores {
+        font-size: 2rem;
+    }
+
+    .valores {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .parrafoValores {
+        font-size: 1.25rem;
+    }
+
+    .titulo {
+        font-size: 2rem;
+    }
+    
+    .tituloServicio {
+        font-size: 2rem;
+    }
+
+    .serviciosFlex {
+        flex-direction:column;
+    }
+
+    .parrafoServicio {
+        font-size: 1.5rem;
+    }
+
+    .imgServicio {
+        width: 65vw;
+    }
+
+    .parrafoBlog {
+        font-size: 1.5rem;
+    }
+
+    .contactoFlex {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 10px;
+    }
+
+    .cajaFormulario {
+        max-width: 80vw;
+    }
+}
+
+/*Adaptación a mobile*/
+@media(max-width: 575.98px) {
+
+    .logoNav {
+        width: 20vw;
+        margin-left: 0.5vw;
+    }
+    
+    .sloganNav {    
+        width: 35vw;
+        height: auto;
+        margin-left: 0.1vw;
+    }
+
+    .logoFooter {
+        width: 35vw;
+    }
+
+    .tituloPrincipal {
+        font-size: 1.5rem;
+        margin-top: 1vh;
+    }
+
+    .cajaDark {
+        height: 35vh;
+        padding-bottom: 1rem;
+    }
+
+    .tituloSecundario {
+        font-size: 1.3rem;
+    }
+
+    .tituloPri {
+        font-size: 1.5rem;        
+    }
+    
+    .caja__Titulo {
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+    }
+
+    .caja__ImgServ {    
+        height: auto;
+        width: 80vw;
+    }
+    
+    .subtitulo {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        margin: 5px;
+    }
+
+    .cajaPie {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .cajitaServicio {
+        width: 90vw;
+    }
+
+    .imgServicio{
+        width: 90vw;
+    }
+
+    .cajita {
+        width: 100vw;
+    }
+
+    .articulo {
+        width: 90vw;
+    }
+
+    .contenedorPilares {
+        margin: 0.25rem 1rem 1rem 1rem;
+    }
+
+    .tituloValores {
+        font-size: 1.5rem;
+        padding-bottom: 2rem;
+    }
+
+    .valores {
+        font-size: 1.25rem;
+    }
+
+    .parrafoValores {
+        font-size: 1rem;
+    }
+
+    .titulo {
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+        margin: 1rem;
+    }
+
+    .tituloServicio {
+        font-size: 1.25rem;
+    }
+
+    .parrafo {
+        font-size: 1.25rem;
+    }
+
+    .parrafoServicio {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .parrafoBlog {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .contacto {
+        font-size: 14px;
+        text-align:left;
+        margin-left: 1px;
+    }
+
+    .cajaFormulario {
+        max-width: 92vw;
+    }
+}
